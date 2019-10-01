@@ -47,10 +47,8 @@ allprojects {
             }
         }
        
-        /*
-        *Include below code only for transaction based billing
-        */
         // (OPTIONAL) Maven credentials for the Torus SDK
+        // Include below code only for transaction based billing
         maven {
             url "https://torus-android.repo.frslabs.space/"
             credentials {
