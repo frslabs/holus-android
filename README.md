@@ -82,15 +82,18 @@ And then, add the dependencies
 // ...
 
 dependencies {
-    /* Dependencies for Holus SDK */ 
+    /* Android SDK Dependencies for Holus */ 
     implementation 'com.android.support:design:<version above 23.4.0>'      
     implementation 'com.android.support.constraint:constraint-layout:<version above 1.1.3>'
    
-    // Holus Core Dependency
+    // REQUIRED - Holus Core Dependency
     implementation 'com.frslabs.android.sdk:holus:1.0.0' 
     
-    // OPTIONAL - Required if transaction based billing is enabled
-    // Holus billing dependencies
+    // REQUIRED - Holus Additional Depedencies 
+    implementation 'org.tensorflow:tensorflow-lite:1.14.0'
+    
+    // OPTIONAL - Holus billing dependencies
+    // Required only if transaction based billing is enabled
     implementation('com.frslabs.android.sdk:torus:0.0.9')
     implementation('com.squareup.retrofit2:converter-gson:2.3.0')
     implementation('com.squareup.retrofit2:retrofit:2.3.0')
