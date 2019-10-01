@@ -66,12 +66,24 @@ After that, add the following code to your `app` level `build.gradle` file
 ```groovy
 // ...
 
-defaultConfig { 
+    android {
+    
+        // ...
+        
+        defaultConfig { 
+        
+            // ...
+        
+            vectorDrawables.useSupportLibrary true 
+        }
+        
+        aaptOptions {
+            noCompress "tflite"
+        }
 
-    // ...
-
-    vectorDrawables.useSupportLibrary true 
-}
+        // ...
+        
+    }
 
 // ...
 ```
