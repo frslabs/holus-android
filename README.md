@@ -21,6 +21,8 @@ The Holus SDK comes with a video recording screen to capture the identity docume
 
 You will need a valid license to use the Holus SDK, which can be obtained by contacting `support@frslabs.com` . 
 
+Depending on the license - offline or online - you have opted for, the ping functionality to billing servers will be disabled or enabled. For instance, if you have opted for the offline SDK model, then there will be no server ping needed to our billing server to bill you. However, if you have chosen a transaction based pricing, then after each transaction, a ping request will be made to our billing server. This cannot be overrided by the App. A point to note is that if the ping transaction fails for any reason, the whole transaction will be void without any results from the SDK.
+
 Once you have the license , follow the below instructions for a successful integration of Holus SDK onto your Android Application.
 
 ## Android SDK Requirements
@@ -40,10 +42,23 @@ allprojects {
             // Maven Url and Credentials for Holus SDK. 
             url "https://holus-android.repo.frslabs.space/"                  
             credentials { 
-                   username 'repo-username' 
-                   password 'repo-password' 
+                username '<ENTER-USERNAME-HERE>'
+                password '<ENTER-PASSWORD-HERE>' 
             }
-       }
+        }
+       
+        /*
+        *Include below code only for transaction based billing
+        */
+        // (OPTIONAL) Maven credentials for the Torus SDK
+        maven {
+            url "https://torus-android.repo.frslabs.space/"
+            credentials {
+                username '<ENTER-USERNAME-HERE>'
+                password '<ENTER-PASSWORD-HERE>' 
+            }
+        }
+        
     }
 }
 ```
@@ -73,7 +88,15 @@ dependencies {
     implementation 'com.android.support:design:<version above 23.4.0>'      
     implementation 'com.android.support.constraint:constraint-layout:<version above 1.1.3>'
    
+    // Holus Core Dependency
     implementation 'com.frslabs.android.sdk:holus:1.0.0' 
+    
+    // OPTIONAL - Required if transaction based billing is enabled
+    // Holus billing dependencies
+    implementation('com.frslabs.android.sdk:torus:0.0.9')
+    implementation('com.squareup.retrofit2:converter-gson:2.3.0')
+    implementation('com.squareup.retrofit2:retrofit:2.3.0')
+    implementation('com.google.code.gson:gson:2.8.5')
 }
 ```
 
@@ -89,12 +112,32 @@ Holus requires the camera permission to work properly
     <!-- Required by Holus -->
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- Optional - Required if transaction based billing is enabled -->
+    <uses-permission android:name="android.permission.INTERNET" />  
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  
     <application>
       ...
     </application>
 
 </manifest>
 ```
+
+#### Proguard rules
+
+Include below proguard rules only if transaction based billing is enabled
+
+```java
+-keep class retrofit.** { *; }
+
+-keepclasseswithmembers class * {
+   @retrofit2.http.* <methods>;
+}
+-keepclasseswithmembers interface * {
+   @retrofit2.* <methods>;
+}
+```
+
 
 ## Quick Start
 
