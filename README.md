@@ -91,6 +91,7 @@ dependencies {
     
     // REQUIRED - Holus Additional Depedencies 
     implementation 'org.tensorflow:tensorflow-lite:1.14.0'
+    implementation 'com.google.android.gms:play-services-vision:17.0.2'
     
     // OPTIONAL - Holus billing dependencies
     // Required only if transaction based billing is enabled
