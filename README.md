@@ -239,7 +239,7 @@ Your activity must implement `HolusResultCallback` to receive the result.
 
 ## Holus Result
 
-You can use the following methods in the `HolusResult` instance to parse the success result:
+You can use the following methods in the `HolusResult` instance to parse the result:
 
 | Return Type | Method                 | Usage                                      |
 | ----------- | ---------------------- | ------------------------------------------ |
