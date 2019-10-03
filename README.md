@@ -14,6 +14,7 @@ The Holus SDK comes with a video recording screen to capture the identity docume
 - [Quick Start](#quick-start)
   - [Initiating the Holus SDK](#initiating-the-holus-sdk)
   - [Handling the result](#handling-the-result)
+- [Holus Result](#holus-result)
 - [Holus Error Codes](#holus-error-codes)
 - [Holus Parameters](#holus-parameters)
 - [Help](#help)
@@ -235,6 +236,16 @@ Your activity must implement `HolusResultCallback` to receive the result.
 
     // ...
 ```
+
+## Holus Result
+
+You can use the following methods in the `HolusResult` instance to parse the success result:
+
+| Return Type | Method                 | Usage                                      |
+| ----------- | ---------------------- | ------------------------------------------ |
+| String      | *getHolusVideoPath()*   | MP4 File Path of recorded video               |
+| boolean     | *isDocumentSpoofed()* | Result of document spoof check (true is doucment is spoofed)|
+| String      | *getHolusSessionReferenceId()* |  Reference Id corredponsing to the video |
 
 ## Holus Error Codes
 
