@@ -14,6 +14,7 @@ The Holus SDK comes with a video recording screen to capture the identity docume
 - [Quick Start](#quick-start)
   - [Initiating the Holus SDK](#initiating-the-holus-sdk)
   - [Handling the result](#handling-the-result)
+- [Holus Error Codes](#holus-error-codes)
 - [Holus Parameters](#holus-parameters)
 - [Help](#help)
 
@@ -234,6 +235,17 @@ Your activity must implement `HolusResultCallback` to receive the result.
 
     // ...
 ```
+
+## Holus Error Codes
+
+Following error codes will be returned on the `onHolusFailure` method of the callback
+
+| CODE | DESCRIPTION                  |
+| ---- | ---------------------------- |
+| 803  | Camera permission denied    |
+| 804  | Scan was interrupted            |
+| 805  | Holus SDK License got expired             |
+| 806  | Holus SDK License was invalid             |
 
 ## Holus Parameters
 
