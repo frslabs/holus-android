@@ -169,7 +169,13 @@ public class MainActivity extends AppCompatActivity implements HolusResultCallba
     /* Enter the Holus license key here */
     private String HOLUS_LICENSE_KEY = "<ENTER_YOUR_LICENSE_KEY_HERE>";
     
-    /* Enter the Holus encryption key here */
+    /* (OPTIONAL)  Enter the Holus REST API credentials here */
+    private String HOLUS_API_BASE_URL = "<ENTER_BASE_URL_HERE>",
+            HOLUS_API_REFERENCE_ID = "<ENTER_REF_ID_HERE>",
+            HOLUS_API_CRED1 = "<ENTER_API_CRED1_HERE>",
+            HOLUS_API_CRED2 = "<ENTER_API_CRED2_HERE>";
+
+    /* (OPTIONAL)  Enter the Holus encryption key here */
     private String HOLUS_ENCRYPTION_KEY = "<ENTER_ENCRYPTION_KEY_HERE>";
 
     @Override
@@ -190,10 +196,14 @@ public class MainActivity extends AppCompatActivity implements HolusResultCallba
 
         //Initialize the Holus Sdk Config object with the appropriate configurations
         HolusConfig holusConfig = new HolusConfig.Builder()
-                            .setLicenseKey(HOLUS_LICENSE_KEY)
-                            .setEncryptionKey(HOLUS_ENCRYPTION_KEY) //Optional
-                            .build();
-
+                .setLicenseKey(HOLUS_LICENSE_KEY)
+                .setEncryptionKey(HOLUS_ENCRYPTION_KEY) //Optional
+                .setHolusApiCreentials(new HolusApiCredentials(HOLUS_API_BASE_URL
+                        ,HOLUS_API_REFERENCE_ID
+                        ,HOLUS_API_CRED1
+                        ,HOLUS_API_CRED2)) // Optional
+                .build();
+                
         //Call the Holus Sdk to start scanning
         Holus holus = new Holus(holusConfig);
         holus.start(this, this);
