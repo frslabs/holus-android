@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements HolusResultCallba
         HolusConfig holusConfig = new HolusConfig.Builder()
                 .setLicenseKey(HOLUS_LICENSE_KEY)
                 .setEncryptionKey(HOLUS_ENCRYPTION_KEY) //Optional
-                .setHolusApiCreentials(new HolusApiCredentials(HOLUS_API_BASE_URL
+                .setHolusApiCredentials(new HolusApiCredentials(HOLUS_API_BASE_URL
                         ,HOLUS_API_REFERENCE_ID
                         ,HOLUS_API_CRED1
                         ,HOLUS_API_CRED2)) // Optional
