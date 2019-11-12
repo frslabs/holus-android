@@ -21,6 +21,8 @@ The Holus SDK comes with a video recording screen to capture the identity docume
 
 ## Prerequisite
 
+***NOTE : Encryption of HOLUS SDK Result is under development***
+
 You will need a valid license to use the Holus SDK, which can be obtained by contacting `support@frslabs.com` . 
 
 Depending on the license - offline or online - you have opted for, the ping functionality to billing servers will be disabled or enabled. For instance, if you have opted for the offline SDK model, then there will be no server ping needed to our billing server to bill you. However, if you have chosen a transaction based pricing, then after each transaction, a ping request will be made to our billing server. This cannot be overrided by the App. A point to note is that if the ping transaction fails for any reason, the whole transaction will be void without any results from the SDK.
