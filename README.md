@@ -1,5 +1,5 @@
 # HOLUS SDK
-![version](https://img.shields.io/badge/version-v1.0.0-blue)
+![version](https://img.shields.io/badge/version-v1.0.0--beta20-blue)
 
 The Holus SDK comes with a video recording screen to capture the identity document at different angles to check for the presence or absence of holograms in the ID. Available for limited countries only.
 
@@ -101,7 +101,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:<version above 1.1.3>'
    
     // REQUIRED - Holus Core Dependency
-    implementation 'com.frslabs.android.sdk:holus:1.0.0' 
+    implementation 'com.frslabs.android.sdk:holus:1.0.0-beta20' 
     
     // REQUIRED - Holus Additional Depedencies 
     implementation 'org.tensorflow:tensorflow-lite:1.14.0'
@@ -167,16 +167,16 @@ public class MainActivity extends AppCompatActivity implements HolusResultCallba
     // ...
 
     /* Enter the Holus license key here */
-    private String HOLUS_LICENSE_KEY = "<ENTER_YOUR_LICENSE_KEY_HERE>";
+    private String HOLUS_LICENSE_KEY = "ENTER_YOUR_LICENSE_KEY_HERE";
     
     /* (OPTIONAL)  Enter the Holus REST API credentials here */
-    private String HOLUS_API_BASE_URL = "<ENTER_BASE_URL_HERE>",
-            HOLUS_API_REFERENCE_ID = "<ENTER_REF_ID_HERE>",
-            HOLUS_API_CRED1 = "<ENTER_API_CRED1_HERE>",
-            HOLUS_API_CRED2 = "<ENTER_API_CRED2_HERE>";
+    private String HOLUS_API_BASE_URL = "ENTER_BASE_URL_HERE",
+            HOLUS_API_REFERENCE_ID = "ENTER_REF_ID_HERE",
+            HOLUS_API_CRED1 = "ENTER_API_CRED1_HERE",
+            HOLUS_API_CRED2 = "ENTER_API_CRED2_HERE";
 
     /* (OPTIONAL)  Enter the Holus encryption key here */
-    private String HOLUS_ENCRYPTION_KEY = "<ENTER_ENCRYPTION_KEY_HERE>";
+    private String HOLUS_ENCRYPTION_KEY = "ENTER_ENCRYPTION_KEY_HERE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -264,9 +264,9 @@ Following error codes will be returned on the `onHolusFailure` method of the cal
 | CODE | DESCRIPTION                  |
 | ---- | ---------------------------- |
 | 803  | Camera permission denied    |
-| 804  | Scan was interrupted            |
-| 805  | Holus SDK License got expired             |
-| 806  | Holus SDK License was invalid             |
+| 804  | Scan interrupted            |
+| 805  | Holus SDK License has expired             |
+| 806  | Holus SDK License is invalid             |
 
 ## Holus Parameters
 
