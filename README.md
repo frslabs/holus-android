@@ -46,8 +46,8 @@ allprojects {
             // Maven Url and Credentials for Holus SDK. 
             url "https://holus-android.repo.frslabs.space/"                  
             credentials { 
-                username '<ENTER-USERNAME-HERE>'
-                password '<ENTER-PASSWORD-HERE>' 
+                username 'ENTER-USERNAME-HERE'
+                password 'ENTER-PASSWORD-HERE' 
             }
         }
        
@@ -56,8 +56,8 @@ allprojects {
         maven {
             url "https://torus-android.repo.frslabs.space/"
             credentials {
-                username '<ENTER-USERNAME-HERE>'
-                password '<ENTER-PASSWORD-HERE>' 
+                username 'ENTER-USERNAME-HERE'
+                password 'ENTER-PASSWORD-HERE' 
             }
         }
         
