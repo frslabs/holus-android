@@ -1,5 +1,5 @@
 # HOLUS SDK
-![version](https://img.shields.io/badge/version-v1.0.0--beta20-blue)
+![version](https://img.shields.io/badge/version-v1.0.0--beta21-blue)
 
 The Holus SDK comes with a video recording screen to capture the identity document at different angles to check for the presence or absence of holograms in the ID. Available for limited countries only.
 
